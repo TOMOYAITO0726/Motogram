@@ -1,24 +1,27 @@
-# README
+#Name
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Motogram(SNSアプリ)    
 
-Things you may want to cover:
+##サイト概要 
+バイクのツーリング投稿専用のSNS
 
-* Ruby version
+##サイトテーマ
+ライダー（バイク乗り）同士でツーリングスポットを知れたり、ライダー同士で繋がれたりできるSNS
 
-* System dependencies
+###テーマを選んだ理由
+バイクでツーリングに出かけるのが趣味で、他のライダーと知り合えたり、おすすめのツーリングスポットを情報共有できたりするサービスがあれば便利だと考え、このテーマにしました。
 
-* Configuration
+###ターゲットユーザー
+ライダー（バイク乗り）
 
-* Database creation
+###主な利用シーン
+ツーリングの計画を立てる時やツーリングの様子を投稿する時
 
-* Database initialization
+##設計書
 
-* How to run the test suite
+##開発環境
 
-* Services (job queues, cache servers, search engines, etc.)
+##使用素材
 
-* Deployment instructions
-
-* ...
+##実装機能リストのURL
+<https://docs.google.com/spreadsheets/d/13f6ZdodjN6tMnvBir0H7WbTt4DkHRNtsIspl3qRV4Ps/edit#gid=1898975908>
