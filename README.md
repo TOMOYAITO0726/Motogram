@@ -1,8 +1,8 @@
-# Name  
+# Motogram(SNSアプリ)    
 
-Motogram(SNSアプリ)    
+## サイト概要  
 
-## テーマ  
+## テーマ   
 ライダー（バイク乗り）同士でツーリングスポットを知れたり、ライダー同士で繋がれたりできるSNS  
 
 ### テーマを選んだ理由  
@@ -28,3 +28,8 @@ TwitterやInstagram等のSNSとは異なり、同じ趣味をもつライダー�
 <https://docs.google.com/spreadsheets/d/13f6ZdodjN6tMnvBir0H7WbTt4DkHRNtsIspl3qRV4Ps/edit#gid=1898975908>  
 
 ## 開発環境
+* OS：Linux(CentOS)
+* 言語：HTML,CSS,JavaScript,Ruby,SQL
+* フレームワーク：Ruby on Rails
+* JSライブラリ：jQuery
+* IDE：Cloud9
