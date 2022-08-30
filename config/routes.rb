@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   
+  
+  namespace :public do
+    resources :posts, only: [:index, :new, :create, :show, :destory]
+  end  
+  
+  
   devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
    sessions: "admin/sessions"
   }
