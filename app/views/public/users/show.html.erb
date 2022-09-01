@@ -1,0 +1,16 @@
+<div>
+    <%= @user.last_name %><%= @user.first_name %>
+    <%= image_tag @user.get_profile_image(100,100) %>
+</div>
+
+<% @post.each do |post| %>
+<div>
+    <%= link_to public_user_path(post.id) do %>
+        <%= image_tag post.get_image(100,100) %>
+    <% end %>
+    <%#= image_tag post.user.get_profile_image(100,100) %>
+    説明:<%= post.caption %>
+
+</div>
+<% end %>
+ 

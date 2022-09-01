@@ -1,6 +1,7 @@
 <h1>新着一覧</h1>
 
 <% @posts.each do |post| %>
+投稿ユーザー画像：<%= image_tag post.user.get_profile_image(100,100) %>
 <%= image_tag post.get_image(200,200) %>
 <%= post.caption %>
 <%= post.user.last_name %>
