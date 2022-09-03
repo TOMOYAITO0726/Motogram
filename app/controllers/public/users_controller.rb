@@ -15,10 +15,16 @@ class Public::UsersController < ApplicationController
       redirect_to  public_user_path(current_user.id)
     end  
     
+    def favorites
+      @user = User.find(params[:id])
+      favorites= Favorite.where(user_id: @user.id).pluck(:post_id)
+      @favorite_posts = Post.find(favorites)
+    end
+    
     private
     
     def user_params
-      params.require(:user).permit(:profile_image)
+      params.require(:user).permit(:profile_image,:user_name,:introduction)
     end
     
 end

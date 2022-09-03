@@ -4,5 +4,15 @@
     <%= f.file_field :image,  accept: "image/*" %>
     投稿本文
     <%= f.text_field :caption %> 
+    
+      <%= f.radio_button :post_status,Post.post_statuses.keys[0] %>
+      <%= f.label :post_status, Post.post_statuses_i18n[:private],value: Post.post_statuses.keys[0]  %>
+    
+      <%= f.radio_button :post_status,Post.post_statuses.keys[1] %>
+      <%= f.label :post_status, Post.post_statuses_i18n[:public],value: Post.post_statuses.keys[1] %>
+    
+ 
+    
+    
     <%= f.submit '投稿する',class:"btn btn-success"%>
   <% end %> 

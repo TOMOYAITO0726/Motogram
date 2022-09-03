@@ -1,5 +1,6 @@
 <div>
-    <%= @user.last_name %><%= @user.first_name %>
+    <%= @user.user_name %>
+    <%= @user.introduction %>
     <%= image_tag @user.get_profile_image(100,100) %>
 </div>
 
@@ -9,8 +10,9 @@
         <%= image_tag post.get_image(100,100) %>
     <% end %>
     <%#= image_tag post.user.get_profile_image(100,100) %>
-    説明:<%= post.caption %>
-
+    <%= post.caption %>
 </div>
 <% end %>
+
+
  

@@ -109,6 +109,8 @@ ActiveRecord::Schema.define(version: 2022_08_29_110727) do
     t.string "first_name_kana", null: false
     t.string "telephone_number", null: false
     t.boolean "is_active", default: true, null: false
+    t.string "user_name", null: false
+    t.text "introduction"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true

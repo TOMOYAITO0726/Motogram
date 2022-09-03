@@ -13,8 +13,10 @@ class Public::PostsController < ApplicationController
     end
     
     def show
-     @post=Post.find(params[:id])
-     @comment=Comment.new
+     @post = Post.find(params[:id])
+     @user = @post.user
+     @comment = Comment.new
+     
     end
     
     def index
@@ -25,7 +27,7 @@ class Public::PostsController < ApplicationController
     end
     
     def post_params
-     params.required(:post).permit(:caption, :image)
+     params.required(:post).permit(:caption, :image, :sta)
     end 
     
 end

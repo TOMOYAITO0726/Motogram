@@ -2,10 +2,12 @@
 本文
   <%= @post.caption %>
   <%= image_tag @post.get_image(200,200) %>
+  <%= @user.user_name %>
   <%#= @post_image.created_at.strftime('%Y/%m/%d') %> 
   コメント件数:<%= @post.comments.count %>
-  <%= @post.comments.each do |comment| %>
-    <%= post.user.name %>
+  <% @post.comments.each do |comment| %>
+   
+    <%= comment.user.user_name %>
     <%= comment.content %>
   <% end %>
 

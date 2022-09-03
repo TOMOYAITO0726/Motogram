@@ -70,6 +70,7 @@ class Public::RegistrationsController < Devise::RegistrationsController
                                                      :first_name,
                                                      :last_name_kana,
                                                      :first_name_kana,
+                                                     :user_name,
                                                      :email,
                                                      :telephone_number,
                                                      :is_active])

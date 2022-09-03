@@ -4,6 +4,9 @@ class Post < ApplicationRecord
     has_many :favorites, dependent: :destroy
     has_many :comments, dependent: :destroy
     
+    enum post_status: { private: 0, public: 1}, _prefix: true
+    
+    
     def get_image(width,height)
       unless image.attached?
         file_path = Rails.root.join('app/assets/images/no_image.jpg')
