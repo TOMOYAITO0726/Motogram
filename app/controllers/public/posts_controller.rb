@@ -6,7 +6,7 @@ class Public::PostsController < ApplicationController
     
     def create
      @post=Post.new(post_params)
-     @post.post_status = 1
+     #@#post.post_status = 1
      @post.user_id=current_user.id
      @post.save
      redirect_to public_posts_path
@@ -16,18 +16,18 @@ class Public::PostsController < ApplicationController
      @post = Post.find(params[:id])
      @user = @post.user
      @comment = Comment.new
-     
     end
     
     def index
      @posts=Post.all
+     @user = current_user
     end
     
     def destroy
     end
     
     def post_params
-     params.required(:post).permit(:caption, :image, :sta)
+     params.required(:post).permit(:caption, :image, :post_status)
     end 
     
 end

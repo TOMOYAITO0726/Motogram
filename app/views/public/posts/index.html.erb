@@ -1,8 +1,10 @@
+<div class="container">
 <h1>新着一覧</h1>
 
 <% @posts.each do |post| %>
-
+<%= link_to public_post_path(post.id) do %>
 <%= image_tag post.get_image(200,200) %>
-
+<% end %>
 
 <% end %>
+</div>
