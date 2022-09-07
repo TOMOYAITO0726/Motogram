@@ -8,7 +8,7 @@ class Post < ApplicationRecord
     enum post_status: { private: 0, public: 1}, _prefix: true
     
     def create_notification_like(current_user)
-      temp = Notification.where(["visitor_id=? and visited_id=? and post_id=? and action=? ", current_user.id, user_id, id, 'like'])
+      temp = Notification.where(["visitor_id = ? and visited_id = ? and post_id = ? and action = ? ", current_user.id, user_id, id, 'like'])
       if temp.blank?
         notification = current_user.active_notifications.new(
           post_id: id,
@@ -23,7 +23,7 @@ class Post < ApplicationRecord
     end 
     
     def create_notification_comment(current_user,comment_id)
-      temp_ids = Comment.select(user_id).where(post_id: id).where.not(user_id: current_user.id).distinct
+      temp_ids = Comment.select(:user_id).where(post_id: id).where.not(user_id: current_user.id).distinct
       temp_ids.each do |temp_id|
         save_notification_comment(current_user, comment_id, temp_id['user_id'])
       end

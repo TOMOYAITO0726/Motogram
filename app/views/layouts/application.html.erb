@@ -29,7 +29,7 @@
     <% if user_signed_in? %>  
         <%= link_to "新着一覧(ホーム)",public_posts_path %>
         <%= link_to "検索" %>
-        <%= link_to "通知" %>
+        <%= link_to "通知" , public_notifications_path %>
         <%= link_to "設定", edit_public_user_path(current_user.id) %>
     <% else %>
     <% end %>

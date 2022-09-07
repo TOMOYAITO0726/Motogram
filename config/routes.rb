@@ -13,7 +13,7 @@ Rails.application.routes.draw do
         get :followers, on: :member
     end   
     
-    resources :notifications,only: :index
+    resources :notifications, only: :index
       
   end  
   

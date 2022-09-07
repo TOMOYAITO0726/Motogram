@@ -1,7 +1,7 @@
 <% visitor =  notification.visitor %>
 <% visited = notification.visited %>
-<%= link_to user_path(visitor) do %>
-    <%= image_tag avatar_url(visitor).to_s, class: "icon_mini" %>
+<%= link_to public_user_path(visitor) do %>
+     <%= image_tag @user.get_profile_image(50,50).to_s, class: "icon_mini" %>
     <strong><%=  visitor.name %></strong>
 <% end %>
 <%= 'さんが' %>
