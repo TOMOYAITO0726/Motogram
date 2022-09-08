@@ -4,12 +4,17 @@
   <%= image_tag @post.get_image(200,200) %>
   <%= @user.user_name %>
   <%#= @post_image.created_at.strftime('%Y/%m/%d') %> 
+  <%= image_tag @user.get_profile_image(100,100) %>
   コメント件数:<%= @post.comments.count %>
   <% @post.comments.each do |comment| %>
    
     <%= comment.user.user_name %>
     <%= comment.content %>
   <% end %>
+  
+<% if @post.user == current_user %>
+ <%= link_to "削除", public_post_path(@post.id),method: :delete %>
+<% end %> 
 
 <% if @post.favorited_by?(current_user) %>
    <%= link_to  public_post_favorites_path(@post), method: :delete do %>

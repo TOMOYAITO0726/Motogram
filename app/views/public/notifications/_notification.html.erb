@@ -1,31 +1,31 @@
 <% visitor =  notification.visitor %>
 <% visited = notification.visited %>
 <%= link_to public_user_path(visitor) do %>
-     <%= image_tag @user.get_profile_image(50,50).to_s, class: "icon_mini" %>
-    <strong><%=  visitor.name %></strong>
+     <%= image_tag visitor.get_profile_image(50,50)%>
+    <strong><%=  visitor.user_name %></strong>
 <% end %>
 <%= 'さんが' %>
 <% case notification.action %>
 <% when 'follow' then %>
     <%= "あなたをフォローしました" %>
 <% when 'like' then %>
-    <%= link_to 'あなたの投稿', notification.post, style: "font-weight: bold;" %>
+    <%= link_to 'あなたの投稿', public_post_path(notification.post) %>
     <%= "にいいねしました" %>
 <%  when 'comment' then %>
     <% if notification.post.user_id == visited.id %>
-        <%= link_to "あなたの投稿", notification.post, style: "font-weight: bold;" %>
+        <%= link_to "あなたの投稿", public_post_path(notification.post) %>
     <% else %>
         <span>
-            <%= link_to post_path(notification.post) do %>
-                <%= image_tag avatar_url(notification.post.user).to_s, class: "icon_mini" %>
+            <%= link_to public_post_path(notification.post) do %>
+                <%= image_tag visited.get_profile_image(50,50) %>
                 <strong>
-                    <%= notification.post.user.name + 'さんの投稿' %>
+                    <%= notification.post.user.user_name + 'さんの投稿' %>
                 </strong>
             <% end %>
         </span>
     <% end %>
     <%=  "にコメントしました" %>
-    <p><%= Comment.find_by(id: notification.comment_id)&.comment %></p>
+    <p><%= Comment.find_by(id: notification.comment_id)&.content %></p>
 <% end %>
 <%= time_ago_in_words(notification.created_at).upcase %>
 <hr

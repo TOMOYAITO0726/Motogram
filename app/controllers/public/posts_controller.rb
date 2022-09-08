@@ -19,11 +19,14 @@ class Public::PostsController < ApplicationController
     end
     
     def index
-     @posts=Post.all
+     @posts = Post.all
      @user = current_user
     end
     
     def destroy
+     @post = Post.find(params[:id])
+     @post.delete
+     redirect_to  public_posts_path
     end
     
     def post_params
