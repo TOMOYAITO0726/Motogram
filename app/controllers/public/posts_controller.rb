@@ -6,7 +6,7 @@ class Public::PostsController < ApplicationController
     
     def create
      @post=Post.new(post_params)
-     #@#post.post_status = 1
+     @post.post_status = 1
      @post.user_id=current_user.id
      @post.save
      redirect_to public_posts_path

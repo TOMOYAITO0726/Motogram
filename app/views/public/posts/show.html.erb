@@ -4,7 +4,9 @@
   <%= image_tag @post.get_image(200,200) %>
   <%= @user.user_name %>
   <%#= @post_image.created_at.strftime('%Y/%m/%d') %> 
+  <%= link_to public_user_path(@user.id) do %>
   <%= image_tag @user.get_profile_image(100,100) %>
+  <% end %>
   コメント件数:<%= @post.comments.count %>
   <% @post.comments.each do |comment| %>
    

@@ -27,6 +27,7 @@
     <%=  "にコメントしました" %>
     <p><%= Comment.find_by(id: notification.comment_id)&.content %></p>
 <% end %>
+
 <%= time_ago_in_words(notification.created_at).upcase %>
 <hr
     
