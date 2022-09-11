@@ -14,8 +14,9 @@ Rails.application.routes.draw do
     end   
     
     resources :notifications, only: :index
-      
+    get "search" => "searches#search"
   end  
+  
   
   
   devise_for :admin, skip: [:registrations, :passwords] ,controllers: {

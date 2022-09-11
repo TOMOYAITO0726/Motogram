@@ -21,11 +21,6 @@ class Public::UsersController < ApplicationController
       @favorite_posts = Post.find(favorites)
     end
     
-    def index
-      @q =  User.ransack(params[:q])
-      @users = @q.result(distinct: true)
-    end  
-    
     private
     
     def user_params
