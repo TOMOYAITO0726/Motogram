@@ -31,7 +31,7 @@ class Public::PostsController < ApplicationController
     end
     
     def post_params
-     params.required(:post).permit(:caption, :images, :post_status)
+     params.required(:post).permit(:caption,  :post_status, images: [])
     end 
     
 end

@@ -3,7 +3,7 @@ class Public::SearchesController < ApplicationController
      @range = params[:range]
      if @range =="User"
        @users = User.looks(params[:word])
-     else
+     elsif @range == "Post"
        @posts = Post.looks(params[:word])
      end
    end 

@@ -9,6 +9,8 @@
         <%= link_to "フォローする",  public_user_relationships_path(@user.id), method: :post %>
       <% end %>    
     <% end %>
+    フォロー数  <%= @user.active_relationships.count %>
+    フォロワー数<%= @user.passive_relationships.count %>
 </div>
 
 <% @post.each do |post| %>
