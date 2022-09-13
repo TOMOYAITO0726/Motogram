@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(version: 2022_08_29_110727) do
   create_table "posts", force: :cascade do |t|
     t.integer "user_id"
     t.text "caption", null: false
-    t.integer "post_status", null: false
+    t.integer "post_status", default: 0, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

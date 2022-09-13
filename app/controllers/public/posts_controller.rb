@@ -6,7 +6,7 @@ class Public::PostsController < ApplicationController
     
     def create
      @post = Post.new(post_params)
-     @post.post_status = 1
+     #@#post.post_status = 1
      @post.user_id=current_user.id
      @post.save
      redirect_to public_posts_path
@@ -25,13 +25,16 @@ class Public::PostsController < ApplicationController
     
     def destroy
      @post = Post.find(params[:id])
-     @post.delete
+     @post.destroy
      flash[:alert] = '投稿を削除しました'
      redirect_to  public_posts_path
     end
     
     def post_params
-     params.required(:post).permit(:caption,  :post_status, images: [])
+     params.required(:post).permit(
+      :caption,  
+      :post_status, 
+      images: [])
     end 
     
 end

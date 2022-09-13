@@ -6,7 +6,7 @@ class Post < ApplicationRecord
     has_many :comments, dependent: :destroy
     has_many :notifications, dependent: :destroy
     
-    enum post_status: { private: 0, public: 1}, _prefix: true
+    enum post_status: { public: 0, private: 1}, _prefix: true
     
     def create_notification_like(current_user)
       temp = Notification.where(["visitor_id = ? and visited_id = ? and post_id = ? and action = ? ", current_user.id, user_id, id, 'like'])

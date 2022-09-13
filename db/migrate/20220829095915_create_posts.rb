@@ -3,7 +3,7 @@ class CreatePosts < ActiveRecord::Migration[6.1]
     create_table :posts do |t|
       t.integer :user_id
       t.text :caption, null: false
-      t.integer :post_status, null: false
+      t.integer :post_status, null: false, default: 0 
       t.timestamps
     end
   end
