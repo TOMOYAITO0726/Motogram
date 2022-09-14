@@ -1,4 +1,10 @@
 <h1>投稿画面</h1>
+ <%# if @post.erros.any? %>
+  <%#= @post.errors.full_messages.each do |messaege| %>
+   <%#= message %>
+  <%# end %>
+ <%# end %>  
+ 
   <%= form_with model: @post, url: public_posts_path, method: :post,local:true do |f| %>
      画像
     <%= f.file_field :images, multiple: true  %>

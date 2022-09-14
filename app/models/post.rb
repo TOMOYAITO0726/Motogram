@@ -5,6 +5,9 @@ class Post < ApplicationRecord
     has_many :favorites, dependent: :destroy
     has_many :comments, dependent: :destroy
     has_many :notifications, dependent: :destroy
+    validates :caption, presence: true
+    validates :images, presence: true
+    scope :publics, -> { where(post_status: 0) }
     
     enum post_status: { public: 0, private: 1}, _prefix: true
     

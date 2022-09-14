@@ -1,5 +1,7 @@
 <h1>いいね一覧</h1>
 
-<% @favorite_posts.each do |post| %>
-<%= image_tag post.get_image(200,200) %>
-<% end %>
+  <% @favorite_posts.each do |post| %>
+      <%= link_to public_post_path(post.id) do %>
+       <%= image_tag post.get_image(200,200) %>
+      <% end %>
+  <% end %>
