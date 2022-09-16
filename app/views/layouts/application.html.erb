@@ -14,10 +14,14 @@
     <header>
       <nav class="navbar" navbar-expand-lg navbar-light>
         <% if user_signed_in? %>
-        <%= link_to "新着",public_posts_path %>
-        <%= link_to "フォロー" %>
-        <%= link_to "お気に入り", favorites_public_user_path(current_user.id) %>
-        <%= link_to "新規投稿",new_public_post_path %>
+          <%= link_to "新着",public_posts_path %>
+          <%= link_to "フォロー" %>
+          <%= link_to "お気に入り", favorites_public_user_path(current_user.id) %>
+          <%= link_to "新規投稿",new_public_post_path %>
+        <% elsif admin_signed_in?%>
+          <%= link_to "ユーザー一覧", admin_users_path %>
+          <%= link_to "ユーザー検索" %>
+          <%= link_to "投稿一覧", admin_posts_path %>
         <% else %>
         <% end %>
       </nav>

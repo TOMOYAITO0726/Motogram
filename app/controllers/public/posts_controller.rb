@@ -12,7 +12,7 @@ class Public::PostsController < ApplicationController
        flash[:alert] = '新規投稿を行いました'
        redirect_to public_posts_path
      else
-       redirect_to new_public_post_path
+       render new_public_post_path
      end 
     end
     

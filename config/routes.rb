@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  namespace :admin do 
+   resources :posts, only: [:index, :show,]
+   resources :users, only: [:index, :show, :edit, :update]
+  end   
   
   namespace :public do
     resources :posts, only: [:index, :new, :create, :show, :destroy]do 
