@@ -15,6 +15,7 @@ Rails.application.routes.draw do
         get :favorites,on: :member
         get :follows, on: :member
         get :followers, on: :member
+        get :profile, on: :member
     end   
     
     resources :notifications, only: :index

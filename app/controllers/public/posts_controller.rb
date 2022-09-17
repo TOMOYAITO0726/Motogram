@@ -1,12 +1,11 @@
 class Public::PostsController < ApplicationController
     
     def new
-     @post=Post.new    
+     @post = Post.new    
     end    
     
     def create
      @post = Post.new(post_params)
-     #@#post.post_status = 1
      @post.user_id=current_user.id
      if @post.save
        flash[:alert] = '新規投稿を行いました'

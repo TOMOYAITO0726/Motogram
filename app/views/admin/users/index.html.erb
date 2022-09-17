@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0">
+    
       <table class="table  table-inverse">
        <th>管理者ユーザー一覧</th>
        <tr>
@@ -13,22 +13,22 @@
        </tr>
 
       <% @users.each do |user| %>
-      　<tr>
+        <tr>
         <td><%= user.id %></td>
         <td><%= user.user_name %></td>
         <td><%= user.last_name %><%= user.first_name %></td>
         <td><%= user.last_name_kana %><%= user.first_name_kana %></td>
         <td><%= user.email %></td>
         
-        <%#= if user.is_active==true %>
+        <% if user.is_active==true %>
         <td>有効</td>
-        <%# else %>
+        <% else %>
         <td>退会</td>
         </tr>
-        <%# end %>
+        <% end %>
       
       <% end %>
      </table>
-    </div>
+    
   </div>  
 </div>

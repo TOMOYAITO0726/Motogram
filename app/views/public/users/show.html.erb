@@ -1,26 +1,61 @@
-<div>
-    <%= @user.user_name %>
-    <%= @user.introduction %>
-    <%= image_tag @user.get_profile_image(100,100) %>
-    <% if current_user!= @user %>
-      <% if @user.followed_by?(current_user) %>
-        <%= link_to "フォロー済み", public_user_relationships_path(@user.id), method: :delete %>
-      <% else %>
-        <%= link_to "フォローする",  public_user_relationships_path(@user.id), method: :post %>
-      <% end %>    
-    <% end %>
-    フォロー数  <%= @user.active_relationships.count %>
-    フォロワー数<%= @user.passive_relationships.count %>
+<div class = "container">
+    <div class =  "text-center">
+      <%= @user.user_name %>
+    </div>
+   <div class = "row" %> 
+       <div class = "col-3" >
+          <%= image_tag @user.get_profile_image(100,100) %>
+       </div>
+       <div class ="col-2">
+         投稿数
+       </div>
+       
+       <div class = "col-2" >
+          <div class = "follow text-center">
+            フォロー数
+          </div>
+          <div class ="text-center">    
+            <%= @user.active_relationships.count %>
+          </div>  
+       </div>
+      
+      <div class = "col-2">
+        <div class = "followed text-center">
+            フォロワー数
+        </div>    
+        <div class = "text-center">    
+            <%= @user.passive_relationships.count %>
+        </div>
+      </div>  
+        
+        <% if current_user!= @user %>
+          <% if @user.followed_by?(current_user) %>
+            <%= link_to "フォロー済み", public_user_relationships_path(@user.id), method: :delete %>
+          <% else %>
+            <%= link_to "フォローする",  public_user_relationships_path(@user.id), method: :post %>
+          <% end %>    
+        <% end %>
+        
+        <% if current_user =@user %>
+          <%= link_to "編集する", edit_public_user_path(current_user.id) %>
+        <% end %>
+        
+    </div>
+    
+    <div class = "row">
+      <%= @user.introduction %>
+    </div>
+    
+    <div class ="posts d-flex flex-row flex-wrap">
+        <% @posts.each do |post| %>
+          <% post.images.first(1).each do |post_image| %>
+            <%= link_to public_post_path(post.id) do %>
+              <%= image_tag post_image,size:"200x200" %>
+            <% end %>
+          <% end %>
+        <% end %>
+    </div>
 </div>
-
-<% @post.each do |post| %>
-<div>
-    <%= link_to public_user_path(post.id) do %>
-        <%= image_tag post.get_image(100,100) %>
-    <% end %>
-    <%= post.caption %>
-</div>
-<% end %>
 
 
  
