@@ -1,8 +1,5 @@
 <h1>投稿詳細</h1>
 <div class = "container">
-    <div class = "text-left">
-      <%= @user.user_name %>
-    </div>
    
     <div class = "row">
       <% @post.images.each do |post| %>
@@ -16,6 +13,7 @@
   <div class = "text-left">
       <%= link_to public_user_path(@user.id) do %>
       <%= image_tag @user.get_profile_image(100,100) %>
+        <%= @user.user_name %>
       <% end %>
   </div>
   

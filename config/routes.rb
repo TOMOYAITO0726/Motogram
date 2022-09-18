@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   
   namespace :admin do 
-   resources :posts, only: [:index, :show,]
+   resources :posts, only: [:index, :show, :destroy]
    resources :users, only: [:index, :show, :edit, :update]
+   get "search" => "searches#search"
   end   
   
   namespace :public do
@@ -12,10 +13,14 @@ Rails.application.routes.draw do
     end 
     resources :users do
       resource :relationships, only: [:create, :destroy]
-        get :favorites,on: :member
-        get :follows, on: :member
-        get :followers, on: :member
-        get :profile, on: :member
+      get :favorites,on: :member
+      get :follows, on: :member
+      get :followers, on: :member
+      member do
+       get :profile
+       patch :profile, to: :update, controller: 'users'
+       get :following_posts
+      end  
     end   
     
     resources :notifications, only: :index
