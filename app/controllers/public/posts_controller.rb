@@ -8,7 +8,7 @@ class Public::PostsController < ApplicationController
      @post = Post.new(post_params)
      @post.user_id=current_user.id
      if @post.save
-       flash[:alert] = '新規投稿を行いました'
+       flash[:notice] = '新規投稿を行いました'
        redirect_to public_posts_path
      else
        render new_public_post_path
@@ -33,7 +33,7 @@ class Public::PostsController < ApplicationController
     def destroy
      @post = Post.find(params[:id])
      @post.destroy
-     flash[:alert] = '投稿を削除しました'
+     flash[:notice] = "投稿を削除しました"
      redirect_to  public_posts_path
     end
     

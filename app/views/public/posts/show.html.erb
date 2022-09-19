@@ -19,7 +19,8 @@
   
   <div class = "col-3">  
     <% if @post.user == current_user %>
-     <%= link_to "削除", public_post_path(@post.id),method: :delete %>
+     <%= link_to "削除", public_post_path(@post.id),method: :delete,
+     date: { confirm: '本当に削除して良いですか?'} %>
     <% end %> 
   </div>
   <div class ="col-3">  
