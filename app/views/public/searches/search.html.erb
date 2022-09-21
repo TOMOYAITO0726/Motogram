@@ -1,3 +1,4 @@
+<div class = "container">
 <%= form_with url: public_search_path, local: true, method: :get do |f| %>
   <%= f.text_field :word %>
   <%= f.select :range, options_for_select([['User'],['Post']]) %>
@@ -15,10 +16,13 @@
      <% end %>
    <% elsif @range =="Post"%>
      <% @posts.each do |post| %>
-         <%= link_to public_post_path(post.id) do %>
-           <%= image_tag post.get_image(100,100) %>
-         <% end %>
+       <% post.images.first(1).each do |post_image| %>
+        <%= link_to admin_post_path(post.id) do %>
+            <%= image_tag post_image,size:"200x200" %>
+        <% end %>
+       <% end %>
      <% end %>
    <% end %>
  </table>  
+</div> 
     

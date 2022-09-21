@@ -1,9 +1,11 @@
 <h1>投稿詳細</h1>
 <div class = "container">
    
-    <div class = "row">
+    <div class = "row slick">
       <% @post.images.each do |post| %>
+      <div class = "slick-item">  
       <%= image_tag post, size:"200x200" %>
+      </div>
       <% end %>
     
     </div>
@@ -20,7 +22,7 @@
   <div class = "col-3">  
     <% if @post.user == current_user %>
      <%= link_to "削除", public_post_path(@post.id),method: :delete,
-     date: { confirm: '本当に削除して良いですか?'} %>
+     data: { confirm: '本当に削除して良いですか?'} %>
     <% end %> 
   </div>
   <div class ="col-3">  
