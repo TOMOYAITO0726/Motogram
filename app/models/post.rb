@@ -8,6 +8,8 @@ class Post < ApplicationRecord
     validates :caption, presence: true
     validates :images, presence: true
     scope :publics, -> { where(post_status: 0) }
+    geocoded_by :address
+    after_validation :geocode
     
     enum post_status: { public: 0, private: 1}, _prefix: true
     

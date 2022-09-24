@@ -20,8 +20,10 @@ ActiveStorage.start()
 
 //ho
 /*global $*/
+$(document).on('turbolinks:load', function() {
 $(function() {
     $('.slick').slick({
         dots: true,
     });
+});
 });

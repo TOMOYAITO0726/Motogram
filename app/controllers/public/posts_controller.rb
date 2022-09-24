@@ -40,7 +40,10 @@ class Public::PostsController < ApplicationController
     def post_params
      params.required(:post).permit(
       :caption,  
-      :post_status, 
+      :post_status,
+      :address,
+      :latitude,
+      :longitude,
       images: [])
     end 
     

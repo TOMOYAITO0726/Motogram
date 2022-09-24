@@ -13,16 +13,117 @@
     <div class = "row">
       投稿本文
       <%= f.text_field :caption %> 
+      地図情報
+      <%= f.text_field :address %>
+      <%= f.hidden_field :latitude, id: 'lat' %>
+      <%= f.hidden_field :longitude, id: 'lon' %>
       
         <%= f.radio_button :post_status,Post.post_statuses.keys[0] %>
         <%= f.label :post_status, Post.post_statuses_i18n[:public],value: Post.post_statuses.keys[0]  %>
       
         <%= f.radio_button :post_status,Post.post_statuses.keys[1] %>
         <%= f.label :post_status, Post.post_statuses_i18n[:private],value: Post.post_statuses.keys[1] %>
-    </div  
+    </div>  
    
       
-      
-      <%= f.submit '投稿する',class:"btn btn-success"%>
+        
+
+  <img id="preview_0" style="width:15%;">
+  <img id="preview_1" style="width:15%;">
+  <img id="preview_2" style="width:15%;">
+  <img id="preview_3" style="width:15%;">
+  <img id="preview_4" style="width:15%;">
+  
+  
+  <h2>gmap</h2>
+  <input id="address" type="textbox" value="GeekSalon">
+  <input type="button" value="Encode" onclick="codeAddress()">
+  <div id="display"></div>
+  <div id='map'></div>
+  <style>
+    #map {
+      height: 400px;
+      width: 400px;
+    }
+  </style>
+  
+   <%= f.submit '投稿する',class:"btn btn-success"%>
     <% end %> 
 </div>  
+  
+  <script>
+    $('#post_images').on('change',function(e){
+      console.log(e.target.files)
+      if(e.target.files.length >5){
+        alert('一度に投稿できるのは五枚までです。');
+        $('#post_images').val ="";
+         for( let i = 0; i < 5; i++) {
+        $(`#preview_${i}`).attr('src', "");
+        }
+
+      }else{
+      let reader = new Array(5);
+       for( let i = 0; i < 5; i++) {
+        $(`#preview_${i}`).attr('src', "");
+      }
+
+      for(let i = 0; i < e.target.files.length; i++) {
+        reader[i] = new FileReader();
+        reader[i].onload = finisher(i,e); 
+        reader[i].readAsDataURL(e.target.files[i]);
+
+        
+        function finisher(i,e){
+          return function(e){
+          $(`#preview_${i}`).attr('src', e.target.result);
+          }
+        }
+      }
+   } 
+    });
+    
+  let map
+
+function initMap(){
+  geocoder = new google.maps.Geocoder()
+
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: 40.7828, lng:-73.9653},
+    zoom: 12,
+  });
+
+  marker = new google.maps.Marker({
+    position:  {lat: 40.7828, lng:-73.9653},
+    map: map
+  });
+}  
+    
+  let geocoder
+  const display = document.getElementById('display')
+  function codeAddress(){
+  let inputAddress = document.getElementById('address').value;
+
+  geocoder.geocode( { 'address': inputAddress}, function(results, status) {
+    if (status == 'OK') {
+      console.log(results[0].geometry)
+      map.setCenter(results[0].geometry.location);
+      var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location
+      });
+      document.getElementById('lat').value = results[0].geometry.location.lat()
+      document.getElementById('lon').value = results[0].geometry.location.lng()
+      display.textContent = "検索結果：" + results[ 0 ].geometry.location
+    } else {
+      alert('該当する結果がありませんでした：' + status);
+    }
+   });   
+  }
+    
+ 
+    
+    
+    
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHKL2wSrRXoEwV5byo5P16cHRVDm__8Ok&callback=initMap" async defer></script>
+  
