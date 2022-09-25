@@ -8,8 +8,8 @@
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
 <!--<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>-->
-    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all' %>
+    <%= javascript_pack_tag 'application' %>
   </head>
   <body>
     <header>
@@ -18,7 +18,7 @@
           <%= link_to "新着",public_posts_path %>
           <%= link_to "フォロー", following_posts_public_user_path(current_user) %>
           <%= link_to "お気に入り", favorites_public_user_path(current_user.id) %>
-          <%= link_to "新規投稿",new_public_post_path %>
+          <%= link_to "新規投稿",new_public_post_path ,data: {turbolinks: false} %>
         <% elsif admin_signed_in?%>
           <%= link_to "ユーザー一覧", admin_users_path %>
           <%= link_to "検索", admin_search_path %>

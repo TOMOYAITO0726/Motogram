@@ -13,8 +13,7 @@
     <div class = "row">
       投稿本文
       <%= f.text_field :caption %> 
-      地図情報
-      <%= f.text_field :address %>
+      
       <%= f.hidden_field :latitude, id: 'lat' %>
       <%= f.hidden_field :longitude, id: 'lon' %>
       
@@ -37,7 +36,7 @@
   
   <h2>gmap</h2>
   <input id="address" type="textbox" value="GeekSalon">
-  <input type="button" value="Encode" onclick="codeAddress()">
+  <input type="button" value="検索" onclick="codeAddress()">
   <div id="display"></div>
   <div id='map'></div>
   <style>

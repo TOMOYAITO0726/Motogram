@@ -4,7 +4,6 @@
 // that code so it'll be compiled.
 
 import Rails from "@rails/ujs"
-import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
@@ -15,15 +14,12 @@ import "../stylesheets/application"
 import '@fortawesome/fontawesome-free/js/all'
 import 'slick-carousel'
 Rails.start()
-Turbolinks.start()
 ActiveStorage.start()
 
 //ho
 /*global $*/
-$(document).on('turbolinks:load', function() {
 $(function() {
     $('.slick').slick({
         dots: true,
     });
-});
 });

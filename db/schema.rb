@@ -86,9 +86,9 @@ ActiveRecord::Schema.define(version: 2022_08_29_110727) do
     t.integer "user_id"
     t.text "caption", null: false
     t.integer "post_status", default: 0, null: false
-    t.string "address", null: false
-    t.float "latitude", null: false
-    t.float "longitude", null: false
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

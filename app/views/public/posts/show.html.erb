@@ -41,6 +41,15 @@
  <div class ="row">
     <%= @post.caption %>
  </div>
+ 
+ <div id='map'></div>
+ <style>
+#map {
+  height: 300px;
+  width: 400px;
+}
+</style>
+ 
  <div class = "row">
   コメント件数:<%= @post.comments.count %>
     <% @post.comments.each do |comment| %>
@@ -55,3 +64,34 @@
      <%= f.submit"送信する" %>
     <% end %> 
 </div>
+
+<script>
+  let map
+  console.log('map', map)
+  
+  function initMap(){
+    geocoder = new google.maps.Geocoder()
+    var test ={lat: <%= @post.latitude %>, lng: <%= @post.longitude %>};
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: test,
+      zoom: 15,
+    });
+
+    
+    var infoWindow = new google.maps.InfoWindow({
+      position: map.getCenter(),
+      
+    });
+  
+    marker = new google.maps.Marker({
+      position: test,
+      map: map,
+      
+    });
+    marker.addListener('click', () => {
+      infoWindow.open(map);
+    });
+  }
+  
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHKL2wSrRXoEwV5byo5P16cHRVDm__8Ok&callback=initMap" async defer></script>
