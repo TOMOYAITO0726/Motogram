@@ -1,10 +1,15 @@
+<style>
+  .slick-dots {
+    text-align: left;
+  }
+</style>
 
 <div class = "container">
    
-    <div class = "row slick">
+    <div class = "row slick text-left">
       <% @post.images.each do |post| %>
-      <div class = "slick-item">  
-      <%= image_tag post, size:"200x200" %>
+      <div class = "slick-item text-center">  
+        <%= image_tag post, size:"400x400" %>
       </div>
       <% end %>
     
@@ -52,12 +57,21 @@
  
  <div class = "row">
   コメント件数:<%= @post.comments.count %>
-    <% @post.comments.each do |comment| %>
-     
-      <%= comment.user.user_name %>
-      <%= comment.content %>
-    <% end %>
  </div>
+
+ <% @post.comments.each do |comment| %>
+   <div>
+     <%= comment.user.user_name %>
+     <%= comment.content %>
+     <% if comment.user == current_user %>
+      <%= link_to "削除", public_post_path(@post.id), method: :delete,
+      data: { confirm: '本当に削除して良いですか?'} %>
+     <% end %>
+   </div>
+ <% end %>
+
+
+
  <div>
     <%= form_with model: [@post,@comment],url:public_post_comments_path(@post.id) do |f| %>
      <%= f.text_area :content, rows:'5', placeholder:"コメントをここに" %>

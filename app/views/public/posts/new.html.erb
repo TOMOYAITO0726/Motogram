@@ -1,40 +1,39 @@
 <div class ="container">
-  <h1>投稿画面</h1>
+  <h1>新規投稿</h1>
+  <div class = "images-preview">
+    <img id="preview_0" style="width:15%;">
+    <img id="preview_1" style="width:15%;">
+    <img id="preview_2" style="width:15%;">
+    <img id="preview_3" style="width:15%;">
+    <img id="preview_4" style="width:15%;">
+  </div>
+  
    <% if @post.errors.any? %>
     <% @post.errors.full_messages.each do |message| %>
      <%= message %>
     <% end %>
    <% end %>  
     <div class ="row">
-    <%= form_with model: @post, url: public_posts_path, method: :post,local:true do |f| %>
-       画像
-      <%= f.file_field :images, multiple: true  %>
+      <%= form_with model: @post, url: public_posts_path, method: :post,local:true do |f| %>
+         画像
+        <%= f.file_field :images, multiple: true  %>
     </div>
     <div class = "row">
-      投稿本文
-      <%= f.text_field :caption %> 
-      
-      <%= f.hidden_field :latitude, id: 'lat' %>
-      <%= f.hidden_field :longitude, id: 'lon' %>
-      
+        投稿本文
+        <%= f.text_area :caption,rows:'5',:size => "30*30" %> 
+    </div>  
+    
+    
+        <%= f.hidden_field :latitude, id: 'lat' %>
+        <%= f.hidden_field :longitude, id: 'lon' %>
+        
         <%= f.radio_button :post_status,Post.post_statuses.keys[0] %>
         <%= f.label :post_status, Post.post_statuses_i18n[:public],value: Post.post_statuses.keys[0]  %>
       
         <%= f.radio_button :post_status,Post.post_statuses.keys[1] %>
         <%= f.label :post_status, Post.post_statuses_i18n[:private],value: Post.post_statuses.keys[1] %>
-    </div>  
-   
-      
-        
-
-  <img id="preview_0" style="width:15%;">
-  <img id="preview_1" style="width:15%;">
-  <img id="preview_2" style="width:15%;">
-  <img id="preview_3" style="width:15%;">
-  <img id="preview_4" style="width:15%;">
-  
-  
-  <h2>gmap</h2>
+     
+  <h2>画像の場所を選ぼう！</h2>
   <input id="address" type="textbox" value="GeekSalon">
   <input type="button" value="検索" onclick="codeAddress()">
   <div id="display"></div>
