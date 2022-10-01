@@ -13,6 +13,7 @@ class Post < ApplicationRecord
     
     enum post_status: { public: 0, private: 1}, _prefix: true
     
+    
     def create_notification_like(current_user)
       temp = Notification.where(["visitor_id = ? and visited_id = ? and post_id = ? and action = ? ", current_user.id, user_id, id, 'like'])
       if temp.blank?
@@ -33,8 +34,9 @@ class Post < ApplicationRecord
       temp_ids.each do |temp_id|
         save_notification_comment(current_user, comment_id, temp_id['user_id'])
       end
-      save_notification_comment(current_user, comment_id, user_id) if temp_ids.blank?
+      save_notification_comment(current_user, comment_id,　user_id) if temp_ids.blank?
     end  
+    
     
     def save_notification_comment(current_user, comment_id, visited_id)
       
@@ -49,6 +51,7 @@ class Post < ApplicationRecord
       end   
       notification.save if notification.valid?
     end
+    
     
     def get_image(width,height)
       unless images.attached?

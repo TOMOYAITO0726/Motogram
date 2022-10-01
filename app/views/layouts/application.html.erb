@@ -30,7 +30,7 @@
           <% end %>  
         <% elsif admin_signed_in?%>
           <%= link_to "ユーザー一覧", admin_users_path %>
-          <%= link_to "検索", admin_search_path, class:"btn btn-danger text-white",  method: :get do %>
+          <%= link_to  admin_search_path, class:"btn btn-danger text-white",  method: :get do %>
             <i class="fas fa-search"></i>
           <% end %>
           <%= link_to "投稿一覧", admin_posts_path %>

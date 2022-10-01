@@ -1,2 +1,0 @@
-class PostCommnt < ApplicationRecord
-end
