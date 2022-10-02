@@ -43,7 +43,9 @@ class Public::UsersController < ApplicationController
                                    :last_name_kana,
                                    :first_name_kana,
                                    :telephone_number,
-                                   :email
+                                   :email,
+                                   :displacement,
+                                   :model
                                    )
     end
     

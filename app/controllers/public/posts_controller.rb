@@ -44,6 +44,7 @@ class Public::PostsController < ApplicationController
       :address,
       :latitude,
       :longitude,
+      :distance,
       images: [])
     end 
     

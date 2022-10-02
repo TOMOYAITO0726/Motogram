@@ -1,5 +1,5 @@
 <div class = "container">
-    <div class =  "text-center">
+    <div class =  "user_name text-left">
       <%= @user.user_name %>
     </div>
    <div class = "row" %> 
@@ -31,7 +31,11 @@
         <div class = "text-center">    
             <%= @user.passive_relationships.count %>
         </div>
-      </div>  
+      </div>
+      <div class = "col-2">
+        走行距離合計
+        <%= @user.total_distance %>km
+      </div>
         
         <% if current_user!= @user %>
           <% if @user.followed_by?(current_user) %>
@@ -48,7 +52,16 @@
         
     </div>
     
-    <div class = "row">
+    <div class = "bike_information">
+      愛車情報
+      <div class = "model">
+        <%= @user.model %>
+      </div>
+      <div class = "displacement">
+        <%= @user.displacement %>
+      </div>
+    </div>
+    <div class = "introduction">
       <%= @user.introduction %>
     </div>
     

@@ -22,7 +22,10 @@
         投稿本文
         <%= f.text_area :caption,rows:'5', style: "width: 3000px;" %> 
     </div>  
-    
+    <div class = "distance">
+      今回の走行距離
+      <%= f.text_field :distance %>km
+    </div>
     
         <%= f.hidden_field :latitude, id: 'lat' %>
         <%= f.hidden_field :longitude, id: 'lon' %>
@@ -33,6 +36,7 @@
         <%= f.radio_button :post_status,Post.post_statuses.keys[1] %>
         <%= f.label :post_status, Post.post_statuses_i18n[:private],value: Post.post_statuses.keys[1] %>
      
+ 
   <h2>画像の場所を選ぼう！</h2>
   <input id="address" type="textbox" value="GeekSalon">
   <input type="button" value="検索" onclick="codeAddress()">

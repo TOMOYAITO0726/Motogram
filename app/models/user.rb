@@ -40,7 +40,11 @@ class User < ApplicationRecord
     profile_image.variant(resize_to_limit: [width, height]).processed
   end
   
-  def self.looks(word)
+  def self.looks(word) # User.looks("word")
      User.where("user_name LIKE?","%#{word}%")
-  end   
+  end
+  
+  def total_distance # @user.total_distance, User.find(1).total_distance
+    posts.sum(:distance)
+  end
 end

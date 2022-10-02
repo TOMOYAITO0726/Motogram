@@ -25,6 +25,7 @@ Rails.application.routes.draw do
     
     resources :notifications, only: :index
     get "search" => "searches#search"
+    get "about" => "homes#about/"
   end  
   
   
