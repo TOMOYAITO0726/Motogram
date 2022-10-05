@@ -1,13 +1,13 @@
 <nav class="navbar navbar-expand-lg navbar-light">
   <i class="fas fa-motorcycle fa-5x"></i>
-  Motogram
+  <font size="5">Motogram</font>
 </nav>
   <div class="container">
     <h1>top</h1>
       <div class="col-md-8 mx-auto ">
 		    　       <div class="introduction">
 						<div class="introduction-text">
-							<span>ようこそ、Motogramへ！</span><br>
+							<span><font size="9">Motogramへようこそ！</font></span><br>
 							<span>このサイトは,バイク好きによるライダーのための趣味特化型SNSになります。</span><br>
 							<span>これからバイクを乗ろうかと思っている方、バイクに興味がある方も閲覧ができます。</span><br>
 							<span>Motogramを通じてバイクライフをお楽しみください</span>
@@ -25,11 +25,13 @@
           <%= link_to "ログアウト",destroy_admin_session_path, method: :delete, class:"btn btn-outline-secondary mr-3vw" %> 
         </div>
       <% else %>
-         <div class="mx-3">
-          <%= link_to"ログイン", new_user_session_path, class:"btn btn-outline-secondary mr-3vw" %>
-        </div>
-        <div>
-          <%= link_to"新規登録", new_user_registration_path, class:"btn btn-outline-secondary mr-3vw" %>
+        <div class ="row">
+         <div class="col "></div>
+          <div class= "col ">
+            <%= link_to"新規登録", new_user_registration_path, class:"btn btn-primary" %>
+            <%= link_to"ログイン", new_user_session_path, class:"btn btn-success" %>
+          </div>
+          <div class ="col"></div>
         </div>
       <% end %>  
     </div>  

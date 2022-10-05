@@ -70,7 +70,7 @@
        <%= comment.content %>
        <%= comment.created_at.strftime('%Y/%m/%d') %> 
        <% if comment.written_by?(current_user) %>
-        <%= link_to "削除", public_post_path(@post.id), method: :delete,
+        <%= link_to "削除", public_post_comment_path(@post.id,comment.id), method: :delete,
         data: { confirm: '本当に削除して良いですか?'} %>
        <% end %>
       </div>
@@ -81,7 +81,7 @@
 
  <div>
     <%= form_with model: [@post,@comment],url:public_post_comments_path(@post.id) do |f| %>
-     <%= f.text_area :content, rows:'5', placeholder:"コメントをここに" %>
+     <%= f.text_area :content, rows:'5', style: "width: 1200px;",placeholder:"コメントをここに" %>
      <%= f.submit"送信する" %>
     <% end %> 
 </div>

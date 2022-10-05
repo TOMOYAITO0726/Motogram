@@ -34,7 +34,7 @@ class Post < ApplicationRecord
       temp_ids.each do |temp_id|
         save_notification_comment(current_user, comment_id, temp_id['user_id'])
       end
-      save_notification_comment(current_user, comment_id,　user_id) if temp_ids.blank?
+      save_notification_comment(current_user, comment_id, user_id) if temp_ids.blank?
     end  
     
     

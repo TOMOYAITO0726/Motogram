@@ -19,15 +19,16 @@
           <%= link_to public_posts_path, class:"btn btn-info ", method: :get do %>
             <i class="far fa-newspaper"></i>
           <% end %>  
+          <%= link_to new_public_post_path ,class:"btn btn-dark text-white ", method: :get do %>
+            <i class="fas fa-plus-square"></i>
+          <% end %>  
           <%= link_to  following_posts_public_user_path(current_user), class:"btn btn-success ", method: :get do  %>
             <i class="far fa-address-card"></i>
           <% end %>  
           <%= link_to  favorites_public_user_path(current_user.id), class:"btn btn-danger text-white ", method: :get do%>
             <i class="fas fa-heart"></i>
           <% end %>  
-          <%= link_to new_public_post_path ,class:"btn btn-dark text-white ", method: :get do %>
-            <i class="fas fa-plus-square"></i>
-          <% end %>  
+           
         <% elsif admin_signed_in?%>
           <%= link_to "ユーザー一覧", admin_users_path %>
           <%= link_to  admin_search_path, class:"btn btn-danger text-white",  method: :get do %>
