@@ -3,7 +3,7 @@
   <font size="5">Motogram</font>
 </nav>
   <div class="container">
-    <h1>top</h1>
+    <h1>トップ画面</h1>
       <div class="col-md-8 mx-auto ">
 		    　       <div class="introduction">
 						<div class="introduction-text">
@@ -15,11 +15,11 @@
 					</div>	
 		</div>			
       
-    <div class = "session_button mx-auto">  
+    <div class = "session_button text-center">  
       <% if user_signed_in? %>
-        <div class="mx-3">
+        
           <%= link_to "ログアウト",destroy_user_session_path, method: :delete, class:"btn btn-outline-secondary mr-3vw" %>
-        </div>
+        
       <% elsif admin_signed_in? %>
         <div class="mx-3">
           <%= link_to "ログアウト",destroy_admin_session_path, method: :delete, class:"btn btn-outline-secondary mr-3vw" %> 

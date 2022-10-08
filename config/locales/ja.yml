@@ -9,6 +9,16 @@ ja:
       post_status:
         public: "公開"
         private: "非公開"
+    user:
+      displacement:
+        under_50: "50cc以下"
+        over_51_under_125: "51~125cc" 
+        over_126_under_250: "126~250cc"
+        over_251_under_400: "251~400cc" 
+        over_401_under_750: "401~750cc"
+        over_751_under_1000: "751~1000cc" 
+        over_1001: "1001以上" 
+        other: "その他"
   datetime:
     distance_in_words:
       half_a_minute: "30秒前後"

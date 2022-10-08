@@ -15,6 +15,18 @@ class User < ApplicationRecord
   has_many :active_notifications, class_name: 'Notification', foreign_key: 'visitor_id', dependent: :destroy
   has_many :passive_notifications, class_name: 'Notification', foreign_key: 'visited_id', dependent: :destroy
    
+  enum displacement: { 
+    under_50: 0,
+    over_51_under_125: 1, 
+    over_126_under_250: 2, 
+    over_251_under_400: 3, 
+    over_401_under_750: 4,
+    over_751_under_1000: 5, 
+    over_1001: 6, 
+    other: 7
+    
+  }
+  
   def create_notification_follow(current_user)
     temp = Notification.where(["visitor_id=? and visited_id=? and action=?",current_user.id,id,'follow'])
     if temp.blank?
