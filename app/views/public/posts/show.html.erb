@@ -1,12 +1,11 @@
 
-
 <div class = "container">
    <div class = "post-user">
       <%= link_to public_user_path(@user.id) do %>
       <%= image_tag @user.get_profile_image(70,70),class: "rounded-circle" %>
         <%= @user.user_name %>
       <% end %>
-  </div>
+   </div>
     <div class = "row slick">
       <% @post.images.each do |post| %>
       <div class = "slick-item">  
@@ -33,47 +32,48 @@
     </div>
     <div class = "col-4">  
       <% if @post.user == current_user %>
-       <%= link_to "投稿を削除する", public_post_path(@post.id),method: :delete,
-       data: { confirm: '本当に削除して良いですか?'} %>
+        <%= link_to "投稿を削除する", public_post_path(@post.id),method: :delete,
+        data: { confirm: '本当に削除して良いですか?'} %>
       <% end %> 
     </div>
   </div>
+   
    <div class = "distance">
      今回の走行距離
      <%= @post.distance %>km
    </div>
  
- <div class ="caption">
+  <div class ="caption">
     <%= @post.caption %>
- </div>
+  </div>
  
- <div id='map'></div>
- <style>
-#map {
-  height: 300px;
-  width: 1200px;
-}
-</style>
+  <div id='map'></div>
+  <style>
+  #map {
+    height: 300px;
+    width: 1200px;
+  }
+  </style>
 
  
- <div class = "row">
+ <div class = "post-comment">
   コメント件数:<%= @post.comments.count %>
  </div>
 
  <% @post.comments.each do |comment| %>
    <div style="display: flex; margin: 10px 0px;">
      <%= link_to public_user_path(comment.user.id) do %>
-     <%= image_tag comment.user.get_profile_image(70,70) ,class: "rounded-circle"%>
+       <%= image_tag comment.user.get_profile_image(70,70) ,class: "rounded-circle"%>
      <% end %>
-     <div style="margin-left: 10px;">
-       <p class="font-weight-bold"><%= comment.user.user_name %></p>
-       <%= comment.content %>
-       <%= comment.created_at.strftime('%Y/%m/%d') %> 
+       <div style="margin-left: 10px;">
+        <p class="font-weight-bold"><%= comment.user.user_name %></p>
+         <%= comment.content %>
+         <%= comment.created_at.strftime('%Y/%m/%d') %> 
        <% if comment.written_by?(current_user) %>
-        <%= link_to "削除", public_post_comment_path(@post.id,comment.id), method: :delete,
-        data: { confirm: '本当に削除して良いですか?'} %>
+          <%= link_to "削除", public_post_comment_path(@post.id,comment.id), method: :delete,
+          data: { confirm: '本当に削除して良いですか?'} %>
        <% end %>
-      </div>
+       </div>
    </div>
  <% end %>
 
@@ -81,10 +81,10 @@
 
  <div>
     <%= form_with model: [@post,@comment],url:public_post_comments_path(@post.id) do |f| %>
-     <%= f.text_area :content, rows:'5', style: "width: 1200px;",placeholder:"コメントをここに" %>
-     <%= f.submit"送信する" %>
+      <%= f.text_area :content, rows:'5', style: "width: 1200px;",placeholder:"コメントをここに" %>
+      <%= f.submit"送信する" %>
     <% end %> 
-</div>
+ </div>
 
 <script>
   let map

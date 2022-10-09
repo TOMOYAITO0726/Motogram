@@ -1,11 +1,10 @@
 <div class = "container">
-<h1>いいね一覧</h1>
-
-  <% @favorite_posts.each do |post| %>
-      <% post.images.first(1).each do |post_image| %>
-            <%= link_to public_post_path(post.id) do %>
-              <%= image_tag post_image,size:"200x200" %>
-            <% end %>
-          <% end %>
-  <% end %>
-  </div>
+  <h1>いいね一覧</h1>
+    <% @favorite_posts.each do |post| %>
+        <% post.images.first(1).each do |post_image| %>
+              <%= link_to public_post_path(post.id) do %>
+                <%= image_tag post_image,size:"200x200" %>
+              <% end %>
+        <% end %>
+    <% end %>
+</div>

@@ -1,8 +1,17 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
-// @import "slick-theme"; 
-// @import "slick";
+@import "about";
 
 #image {
     margin: auto;
+}
+
+.display_sp {
+    display: none;
+}
+
+@media screen and (max-width: 480px) {
+  .display_sp {
+      display: block;
+  }
 }

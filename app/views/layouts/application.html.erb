@@ -7,7 +7,6 @@
     <%= csp_meta_tag %>
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
-<!--<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>-->
     <%= stylesheet_pack_tag 'application', media: 'all' %>
     <%= javascript_pack_tag 'application' %>
   </head>
@@ -31,9 +30,7 @@
            
         <% elsif admin_signed_in? %>
           <%= link_to "ユーザー一覧", admin_users_path %>
-          <%= link_to  admin_search_path, class:"btn btn-danger text-white",  method: :get do %>
-            <i class="fas fa-search"></i>
-          <% end %>
+          <%= link_to "ユーザー・投稿検索", admin_search_path %>
           <%= link_to "投稿一覧", admin_posts_path %>
         <% else %>
         <% end %>
@@ -48,7 +45,7 @@
       <div class = "container">
       <nav class="navbar" navbar-expand-lg navbar-light>
         <% if user_signed_in? %>  
-            <%= link_to public_posts_path, class:"btn btn-primary　text-white", method: :get do %>
+            <%= link_to public_posts_path, class:"btn btn-primary text-white", method: :get do %>
               <i class="fas fa-home fa-2x"></i>
             <% end %>  
             <%= link_to  public_search_path, class:"btn btn-danger text-white", method: :get do%>
@@ -64,8 +61,6 @@
         <% end %>
         </div
       </nav>
-    
-    
     </footer>
   </body>
 </html>

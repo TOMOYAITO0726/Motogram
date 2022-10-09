@@ -1,8 +1,9 @@
 <div class = "container">
     <div class =  "user_name text-left">
-      <%= @user.user_name %>
+      <h1 class="h3"><%= @user.user_name %></h1>
     </div>
-   <div class = "row" %> 
+    <!-- PC Profile -->
+    <div id="pcProfile" class="row" %> 
        <div class = "col-3" >
           <%= image_tag @user.get_profile_image(100,100) %>
        </div>
@@ -56,6 +57,24 @@
         <% end %>
         
     </div>
+    <!-- PC Profile -->
+    <!-- SP Profile -->
+    <div id="spProfile">
+      <div>
+        <%= image_tag @user.get_profile_image(400,400), class: "w-100" %>
+      </div>
+      <dl>
+        <dt>投稿数</dt>
+        <dd><%= @posts.count %></dd>
+        <dt>フォロー数</dt>
+        <dd><%= @user.active_relationships.count %></dd>
+        <dt>フォロワー数</dt>
+        <dd><%= @user.passive_relationships.count %></dd>
+        <dt>走行距離合計</dt>
+        <dd><%= @user.total_distance %>km</dd>
+      </dl>
+    </div>
+    <!-- SP Profile -->
     
      <div class = "introduction">
       <%= @user.introduction %>
@@ -63,10 +82,10 @@
     <div class = "bike_information">
       【愛車情報】
       <div class = "model">
-        <%= @user.model %>
+        車種：<%= @user.model %>
       </div>
       <div class = "displacement">
-        <%= @user.displacement_i18n %>
+        排気量：<%= @user.displacement_i18n %>
       </div>
     </div>
     

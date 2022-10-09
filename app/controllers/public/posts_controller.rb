@@ -26,7 +26,7 @@ class Public::PostsController < ApplicationController
     end
     
     def index
-     @posts = Post.publics
+     @posts = Post.publics.order(created_at: :desc)
      @user = current_user
     end
     

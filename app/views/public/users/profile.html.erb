@@ -7,28 +7,27 @@
       <div class = "profile_image">
           <%= image_tag @user.get_profile_image(200,200) %>
       </div>
-    <%= form_with model:@user, url: public_user_path(current_user.id), method: :patch do |f| %>
-    <div class = "profile_image_choice">
+        <%= form_with model:@user, url: public_user_path(current_user.id), method: :patch do |f| %>
+      <div class = "profile_image_choice">
         プロフィール写真
-        <%= f.file_field :profile_image, placeholder: "プロフィール画像", accept: "image/*" %>
-    </div>
-    <div class = "user_name">
+          <%= f.file_field :profile_image, placeholder: "プロフィール画像", accept: "image/*" %>
+      </div>
+      <div class = "user_name">
         ユーザーネーム
-            <%= f.text_field :user_name, placeholder: "名前" %>
-    </div>
-    <div class = "introduction">
+          <%= f.text_field :user_name, placeholder: "名前" %>
+      </div>
+      <div class = "introduction">
         プロフィール文
         <%= f.text_area :introduction, placeholder: "自己紹介文",rows:'5', style: "width: 300px;" %>
-    </div>
-    <div class = "model">
+      </div>
+      <div class = "model">
         車名（車種）
         <%= f.text_field :model, placeholder: "Ninja250" %>
-    </div>
-    <div class = "displacement">
+      </div>
+      <div class = "displacement">
         排気量
         <%= f.select :displacement, User.displacements.keys.map { |k| [I18n.t("enums.user.displacement.#{k}"), k]} %>
-       
-    </div>
+      </div>
     <%= f.submit"変更を保存" %>
-    <% end %>
+   <% end %>
   </div>

@@ -1,0 +1,18 @@
+#spProfile {
+    display: none;
+}
+
+@media screen and (max-width: 480px) {
+   #spProfile {
+       display: block;
+   }
+   #pcProfile {
+       display: none;
+   }
+    
+   #about img {
+   width: 100%;
+   }
+   
+   
+}
