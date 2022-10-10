@@ -27,6 +27,7 @@
         </div>
         
         <div class="field">
+            <%= f.label :"ユーザーステータス" %>
             <%= f.label :is_active, "有効", value:true %>
             <%= f.radio_button :is_active,true %>
             <%= f.label :is_active, "無効", value:false %>
