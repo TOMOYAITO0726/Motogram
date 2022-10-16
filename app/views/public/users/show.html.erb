@@ -74,6 +74,20 @@
         <dd><%= @user.total_distance %>km</dd>
       </dl>
     </div>
+    
+    <% if current_user!= @user %>
+          <% if @user.followed_by?(current_user) %>
+            <%= link_to "フォロー済み", public_user_relationships_path(@user.id), method: :delete %>
+          <% else %>
+            <%= link_to "フォローする",  public_user_relationships_path(@user.id), method: :post %>
+          <% end %>    
+        <% end %>
+        
+        <% if current_user == @user %>
+          <%= link_to "編集する", profile_public_user_path(current_user.id) %>
+        <% else %>
+        <% end %>
+    
     <!-- SP Profile -->
     
      <div class = "introduction">
