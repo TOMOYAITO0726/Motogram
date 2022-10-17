@@ -27,6 +27,19 @@ class User < ApplicationRecord
     
   }
   
+  def self.guest
+    find_or_create_by!(email: 'guest@example.com', 
+                       last_name: "guest", 
+                       first_name:"tarou", 
+                       last_name_kana:"ゲスト", 
+                       first_name_kana:"タロウ", 
+                       telephone_number:"000000000", 
+                       user_name:"ゲスト") do |user|
+      user.password = SecureRandom.urlsafe_base64
+      
+    end
+  end
+  
   def create_notification_follow(current_user)
     temp = Notification.where(["visitor_id=? and visited_id=? and action=?",current_user.id,id,'follow'])
     if temp.blank?
