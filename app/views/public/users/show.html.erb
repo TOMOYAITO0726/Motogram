@@ -73,7 +73,7 @@
         <dt>走行距離合計</dt>
         <dd><%= @user.total_distance %>km</dd>
       </dl>
-    </div>
+    
     
     <% if current_user!= @user %>
           <% if @user.followed_by?(current_user) %>
@@ -87,7 +87,7 @@
           <%= link_to "編集する", profile_public_user_path(current_user.id) %>
         <% else %>
         <% end %>
-    
+    </div>
     <!-- SP Profile -->
     
      <div class = "introduction">

@@ -53,6 +53,12 @@
     height: 300px;
     width: 1200px;
   }
+   @media screen and (max-width: 480px) {
+    #map {
+      height: 200px;
+      width: 100%;
+    }
+    }
   </style>
 
  
@@ -81,7 +87,7 @@
 
  <div>
     <%= form_with model: [@post,@comment],url:public_post_comments_path(@post.id) do |f| %>
-      <%= f.text_area :content, rows:'5', style: "width: 1200px;",placeholder:"コメントをここに" %>
+      <%= f.text_area :content, rows:'5', style: "width: 80%;",placeholder:"コメントをここに" %><br>
       <%= f.submit"送信する" %>
     <% end %> 
  </div>
