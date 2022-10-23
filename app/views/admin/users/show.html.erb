@@ -1,64 +1,58 @@
 <h1>管理者側ユーザー詳細</h1>
-  <div class =  "text-left">
-      <%= @user.user_name %>
-  </div>
-  <div class = "text-right">
-    <%= link_to "個人情報を編集する",  edit_admin_user_path(@user.id) %>
-  </div>    
-   <div class = "row" %> 
-       <div class = "col-3" >
-          <%= image_tag @user.get_profile_image(100,100) %>
-       </div>
-       <div class = "col-2">
-         <div class = "posts text-center"> 
-            投稿数
-         </div>  
-         <div class = "text-center">
-            <%= @posts.count %>
-          </div>
-       </div>    
-       
-       <div class = "col-2" >
-          <div class = "follow text-center">
-            フォロー数
-          </div>
-          <div class ="text-center">    
-            <%= @user.active_relationships.count %>
-          </div>  
-       </div>
-      
-      <div class = "col-2">
-        <div class = "followed text-center">
-            フォロワー数
-        </div>    
-        <div class = "text-center">    
-            <%= @user.passive_relationships.count %>
+    <div class = "text-left">
+        <%= @user.user_name %>
+    </div>
+    <div class = "text-right">
+      <%= link_to "個人情報を編集する",  edit_admin_user_path(@user.id) %>
+    </div>    
+       <div class = "row" %> 
+           <div class = "col-3" >
+              <%= image_tag @user.get_profile_image(100,100) %>
+           </div>
+           <div class = "col-2">
+              <div class = "posts text-center"> 
+                投稿数
+              </div>  
+              <div class = "text-center">
+                <%= @posts.count %>
+              </div>
+           </div>    
+           <div class = "col-2" >
+              <div class = "follow text-center">
+                フォロー数
+              </div>
+              <div class ="text-center">    
+                <%= @user.active_relationships.count %>
+              </div>  
+           </div>
+           <div class = "col-2">
+              <div class = "followed text-center">
+                  フォロワー数
+              </div>    
+              <div class = "text-center">    
+                  <%= @user.passive_relationships.count %>
+              </div>
+           </div>  
         </div>
-      </div>  
-        
-    </div>
-    
-    <div class = "introduction">
-      <%= @user.introduction %>
-    </div>
-    
-    <div class = "bike_information">
-      【愛車情報】
-      <div class = "model">
-        車種：<%= @user.model %>
-      </div>
-      <div class = "displacement">
-        排気量：<%= @user.displacement_i18n %>
-      </div>
-    </div>
+        <div class = "introduction">
+            <%= @user.introduction %>
+        </div>
+        <div class = "bike_information">
+          【愛車情報】
+          <div class = "model">
+            車種：<%= @user.model %>
+          </div>
+          <div class = "displacement">
+            排気量：<%= @user.displacement_i18n %>
+          </div>
+        </div>
     
     <div class ="posts d-flex flex-row flex-wrap">
         <% @posts.each do |post| %>
           <% post.images.first(1).each do |post_image| %>
             <%= link_to admin_post_path(post.id) do %>
-          <%= image_tag post_image,size:"200x200" %>    
+              <%= image_tag post_image,size:"200x200" %>    
             <% end %>
           <% end %>
         <% end %>
     </div>
-</div>

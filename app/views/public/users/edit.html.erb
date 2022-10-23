@@ -1,5 +1,4 @@
 <h1>個人情報設定</h1>
-    <div class = "container">
         <%= form_with model:@user, url:  public_user_path(current_user.id), method: :patch do |f| %>
         <div class ="field">
             <fieldset>
@@ -35,4 +34,4 @@
         
             <%= f.submit"変更を保存" %>
             <% end %>
-    </div>
+    

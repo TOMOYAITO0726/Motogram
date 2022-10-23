@@ -1,10 +1,10 @@
 class Public::RelationshipsController < ApplicationController
     
     def create
-      @user = User.find(params[:user_id])  
+      user = User.find(params[:user_id])  
       follow = current_user.active_relationships.new(followed_id: params[:user_id])
       follow.save
-      @user.create_notification_follow(current_user)
+      user.create_notification_follow(current_user)
       redirect_to public_user_path(params[:user_id])
     end     
 

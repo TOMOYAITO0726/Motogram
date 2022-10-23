@@ -25,7 +25,6 @@ Rails.application.routes.draw do
     
     resources :notifications, only: :index
     get "search" => "searches#search"
-    #get "about" => "homes#about"
   end  
   
   
@@ -37,8 +36,7 @@ Rails.application.routes.draw do
    registrations: "public/registrations",
    sessions: 'public/sessions'
   }
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  # 以下を追加
+  
   devise_scope :user do
     post 'users/guest_sign_in', to: 'public/sessions#guest_sign_in'
   end

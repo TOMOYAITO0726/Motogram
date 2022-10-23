@@ -1,7 +1,7 @@
 プロフィール編集
-  <div class = "container">
+  <div class = "profile-edit">
     <%= form_with model:@user, url: admin_user_path(@user.id), method: :patch do |f| %>
-   <div class ="row">
+        <div class ="field">
             <%= f.label :"名前（姓)" %>
             <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name" %>
             （名）

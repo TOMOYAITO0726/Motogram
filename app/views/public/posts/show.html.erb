@@ -1,20 +1,16 @@
-
-<div class = "container">
    <div class = "post-user">
       <%= link_to public_user_path(@user.id) do %>
-      <%= image_tag @user.get_profile_image(70,70),class: "rounded-circle" %>
+        <%= image_tag @user.get_profile_image(70,70),class: "rounded-circle" %>
         <%= @user.user_name %>
       <% end %>
    </div>
-    <div class = "row slick">
+   <div class = "row slick">
       <% @post.images.each do |post| %>
-      <div class = "slick-item">  
-        <%= image_tag post, size:"400x400", id:"image" %>
-      </div>
+        <div class = "slick-item">  
+          <%= image_tag post, size:"400x400", id:"image" %>
+        </div>
       <% end %>
-    
-    </div>
-
+   </div>
   <div class ="row">
     <div class = "col-4">
       <%= @post.created_at.strftime('%Y/%m/%d') %>
@@ -38,14 +34,14 @@
     </div>
   </div>
    
-   <div class = "distance">
-     今回の走行距離
-     <%= @post.distance %>km
-   </div>
+    <div class = "distance">
+      今回の走行距離
+      <%= @post.distance %>km
+    </div>
  
-  <div class ="caption">
-    <%= @post.caption %>
-  </div>
+    <div class ="caption">
+      <%= @post.caption %>
+    </div>
  
   <div id='map'></div>
   <style>
@@ -61,10 +57,9 @@
     }
   </style>
 
- 
- <div class = "post-comment">
-  コメント件数:<%= @post.comments.count %>
- </div>
+  <div class = "post-comment">
+    コメント件数:<%= @post.comments.count %>
+  </div>
 
  <% @post.comments.each do |comment| %>
    <div style="display: flex; margin: 10px 0px;">

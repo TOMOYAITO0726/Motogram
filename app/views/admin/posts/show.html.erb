@@ -1,35 +1,35 @@
 <h1>管理者側投稿詳細</h1>
-<div class = "container">
+  <div class = "post-show">
    
-    <div class = "row">
-      <% @post.images.each do |post| %>
-      <%= image_tag post, size:"200x200" %>
-      <% end %>
-    
+    <div class = "posts">
+       <% @post.images.each do |post| %>
+         <%= image_tag post, size:"200x200" %>
+       <% end %>
     </div>
     <%= link_to "削除", admin_post_path(@post.id),method: :delete %>
     
-<%= @post.created_at.strftime('%Y/%m/%d') %> 
-♥<%= @post.favorites.count %>いいね
-  <div class ="row">
-  <div class = "text-left">
-      <%= link_to admin_user_path(@user.id) do %>
-      <%= image_tag @user.get_profile_image(100,100) %>
-        <%= @user.user_name %>
-      <% end %>
-  </div>   
-  </div>
+    <%= @post.created_at.strftime('%Y/%m/%d') %> 
+    
+    ♥<%= @post.favorites.count %>いいね
   
-   <div class ="row">
-    <%= @post.caption %>
- </div>
+    <div class ="user-profile_image">
+      <div class = "text-left">
+        <%= link_to admin_user_path(@user.id) do %>
+          <%= image_tag @user.get_profile_image(100,100) %>
+          <%= @user.user_name %>
+        <% end %>
+      </div>   
+    </div>
  
- <div class = "row">
-  コメント件数:<%= @post.comments.count %>
-    <% @post.comments.each do |comment| %>
-     
-      <%= comment.user.user_name %>
-      <%= comment.content %>
-    <% end %>
- </div>
- </div>
+    <div class ="caption">
+      <%= @post.caption %>
+    </div>
+ 
+    <div class = "row">
+      コメント件数:<%= @post.comments.count %>
+      <% @post.comments.each do |comment| %>
+          <%= comment.user.user_name %>
+          <%= comment.content %>
+      <% end %>
+    </div>
+  </div>
