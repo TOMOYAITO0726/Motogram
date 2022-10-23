@@ -18,3 +18,6 @@ ActiveStorage.start()
 
 //ho
 /*global $*/
+
+$('[data-toggle="tooltip"]').tooltip();
+
