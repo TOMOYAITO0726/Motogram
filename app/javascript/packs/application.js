@@ -18,6 +18,7 @@ ActiveStorage.start()
 
 //ho
 /*global $*/
-
-$('[data-toggle="tooltip"]').tooltip();
+$(document).on('turbolinks:load', function() {
+    $('[data-toggle="tooltip"]').tooltip();
+})
 
