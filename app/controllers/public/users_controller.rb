@@ -7,6 +7,9 @@ class Public::UsersController < ApplicationController
     
     def edit
       @user = User.find(params[:id])
+      unless @user == current_user
+        redirect_to public_posts_path
+      end 
     end
     
     def profile
