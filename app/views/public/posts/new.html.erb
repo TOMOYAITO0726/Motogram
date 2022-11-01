@@ -58,7 +58,6 @@
 
    <script>
     $('#post_images').on('change',function(e){
-      console.log(e.target.files)
       if(e.target.files.length >5){
         alert('一度に投稿できるのは五枚までです。');
         $('#post_images').val ="";

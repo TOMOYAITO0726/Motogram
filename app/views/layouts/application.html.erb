@@ -28,6 +28,9 @@
             <%= link_to  favorites_public_user_path(current_user.id), class:"btn btn-danger text-white ", method: :get do%>
               <i class="fas fa-heart", data-placement="top", title="いいね投稿一覧"></i>
             <% end %>  
+            <%= link_to  favorites_public_user_path(current_user.id), class:"btn btn-danger text-white ", method: :get do%>
+              <i class="fas fa-heart", data-placement="top", title="いいね投稿一覧"></i>
+            <% end %>  
           <% elsif admin_signed_in? %>
             <%= link_to "ユーザー一覧", admin_users_path %>
             <%= link_to "ユーザー・投稿検索", admin_search_path %>

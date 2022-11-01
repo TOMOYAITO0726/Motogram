@@ -9,13 +9,12 @@ Rails.application.routes.draw do
   namespace :public do
     resources :posts, only: [:index, :new, :create, :show, :destroy]do 
       resource  :favorites, only: [:create, :destroy]
-      resources  :comments, only: [:create, :show, :destroy]
+      resources  :comments, only: [:create, :destroy]
     end 
     resources :users do
       resource :relationships, only: [:create, :destroy]
       get :favorites,on: :member
-      get :follows, on: :member
-      get :followers, on: :member
+
       member do
        get :profile
        patch :profile, to: :update, controller: 'users'
