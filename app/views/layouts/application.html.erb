@@ -17,19 +17,19 @@
         <nav class="navbar" navbar-expand-lg navbar-light>
           <% if user_signed_in? %>
             <%= link_to about_path, class:"btn btn-info ", method: :get do %>
-              <i class="far fa-newspaper", data-placement="top", title="使い方"></i>
+              <i class="far fa-newspaper fa-2x", data-placement="top", title="使い方"></i>
             <% end %>  
             <%= link_to new_public_post_path ,class:"btn btn-dark text-white ", method: :get do %>
-              <i class="fas fa-plus-square", data-placement="top", title="新規投稿"></i>
+              <i class="fas fa-plus-square fa-2x", data-placement="top", title="新規投稿"></i>
             <% end %>  
             <%= link_to  following_posts_public_user_path(current_user), class:"btn btn-success ", method: :get do  %>
-              <i class="far fa-address-card", data-placement="top", title="フォロー投稿一覧"></i>
+              <i class="far fa-address-card fa-2x", data-placement="top", title="フォロー投稿一覧"></i>
             <% end %>  
             <%= link_to  favorites_public_user_path(current_user.id), class:"btn btn-danger text-white ", method: :get do%>
-              <i class="fas fa-heart", data-placement="top", title="いいね投稿一覧"></i>
+              <i class="fas fa-heart fa-2x", data-placement="top", title="いいね投稿一覧"></i>
             <% end %>  
-            <%= link_to  favorites_public_user_path(current_user.id), class:"btn btn-danger text-white ", method: :get do%>
-              <i class="fas fa-heart", data-placement="top", title="いいね投稿一覧"></i>
+            <%= link_to  destroy_user_session_path, class:"btn btn-dark text-white ", method: :delete do%>
+           <i class="fas fa-arrow-right fa-2x", data-placement="top", title="ログアウト"></i>
             <% end %>  
           <% elsif admin_signed_in? %>
             <%= link_to "ユーザー一覧", admin_users_path %>

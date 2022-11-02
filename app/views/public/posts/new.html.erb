@@ -103,13 +103,13 @@ function initMap(){
 }  
     
   let geocoder
+  
   const display = document.getElementById('display')
   function codeAddress(){
   let inputAddress = document.getElementById('address').value;
 
   geocoder.geocode( { 'address': inputAddress}, function(results, status) {
     if (status == 'OK') {
-      console.log(results[0].geometry)
       map.setCenter(results[0].geometry.location);
       var marker = new google.maps.Marker({
           map: map,

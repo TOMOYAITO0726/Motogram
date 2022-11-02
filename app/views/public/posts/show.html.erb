@@ -89,8 +89,6 @@
 
 <script>
   let map
-  console.log('map', map)
-  
   function initMap(){
     geocoder = new google.maps.Geocoder()
     var test ={lat: <%= @post.latitude %>, lng: <%= @post.longitude %>};
