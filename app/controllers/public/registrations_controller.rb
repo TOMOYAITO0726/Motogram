@@ -75,4 +75,5 @@ class Public::RegistrationsController < Devise::RegistrationsController
                                                      :telephone_number,
                                                      :is_active])
   end
+  
 end

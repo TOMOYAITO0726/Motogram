@@ -33,6 +33,15 @@ class Public::UsersController < ApplicationController
       users = @user.followings
       @posts = Post.where(user_id: users.pluck(:id)) 
     end
+  
+  before_action :ensure_normal_user, only: :update
+  
+  def ensure_normal_user
+    @user = User.find(params[:id])
+    if @user.email == 'guest@example.com'
+      redirect_to root_path, alert: 'ゲストユーザーの更新できません。'
+    end  
+  end
     
     private
     

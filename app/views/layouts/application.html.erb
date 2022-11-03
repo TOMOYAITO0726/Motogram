@@ -35,13 +35,14 @@
             <%= link_to "ユーザー一覧", admin_users_path %>
             <%= link_to "ユーザー・投稿検索", admin_search_path %>
             <%= link_to "投稿一覧", admin_posts_path %>
+            <%= link_to "ログアウト",destroy_admin_session_path,method: :delete %>
           <% else %>
           <% end %>
         </nav>
       </div>
     </header>
       <div class = "container">  
-        <p><%= notice %></p>
+        <p><%= notice %><%= alert %></p>
         <%= yield %>
       </div>  
     <footer>

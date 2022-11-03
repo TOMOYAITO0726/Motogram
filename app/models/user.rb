@@ -34,7 +34,10 @@ class User < ApplicationRecord
                        last_name_kana:"ゲスト", 
                        first_name_kana:"タロウ", 
                        telephone_number:"000000000", 
-                       user_name:"ゲスト") do |user|
+                       user_name:"ゲスト",
+                       introduction:"はじめしてゲストです",
+                       model:"Ninja250",
+                       displacement:"over_126_under_250") do |user|
       user.password = SecureRandom.urlsafe_base64
       
     end
