@@ -24,7 +24,6 @@ class User < ApplicationRecord
     over_751_under_1000: 5, 
     over_1001: 6, 
     other: 7
-    
   }
   
   def self.guest
