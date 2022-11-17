@@ -1,6 +1,13 @@
-#back img {
+#back img{
   width: 50px;
 }
+
+#back {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+
 #spProfile {
     display: none;
 }
