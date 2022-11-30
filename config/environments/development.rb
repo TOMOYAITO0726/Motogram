@@ -31,7 +31,7 @@ Rails.application.configure do
   end
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
-  config.active_storage.service = :local
+  config.active_storage.service = :amazon
   config.active_storage.web_image_content_types = %w(image/jpeg image/jpg image/png image/webp)
 
   # Don't care if the mailer can't send.
