@@ -33,3 +33,4 @@ TwitterやInstagram等のSNSとは異なり、同じ趣味をもつライダー�
 * フレームワーク：Ruby on Rails
 * JSライブラリ：jQuery
 * IDE：Cloud9
+* 
