@@ -23,6 +23,8 @@ TwitterやInstagram等のSNSとは異なり、同じ趣味をもつライダー�
 * 色々なライダーのツーリングスポットを知りたい時  
 
 ## 設計書  
+
+## インフラ構成図
 <https://drive.google.com/file/d/1xHIpCgYiPZbYIOMSwMWr30o81fEoRvVn/view?usp=sharing>
 
 ## 実装機能リストのURL  
