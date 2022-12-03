@@ -23,7 +23,8 @@ TwitterやInstagram等のSNSとは異なり、同じ趣味をもつライダー�
 * 色々なライダーのツーリングスポットを知りたい時  
 
 ## 設計書  
-
+<https://docs.google.com/spreadsheets/d/1qdF9TCO9BZ25kAk21Ll0dsD2iuIJydUpzWCgKjQ9-ic/edit?usp=sharing>
+  
 ## インフラ構成図
 <https://drive.google.com/file/d/1xHIpCgYiPZbYIOMSwMWr30o81fEoRvVn/view?usp=sharing>
 
