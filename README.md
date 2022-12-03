@@ -23,6 +23,7 @@ TwitterやInstagram等のSNSとは異なり、同じ趣味をもつライダー�
 * 色々なライダーのツーリングスポットを知りたい時  
 
 ## 設計書  
+<https://drive.google.com/file/d/1xHIpCgYiPZbYIOMSwMWr30o81fEoRvVn/view?usp=sharing>
 
 ## 実装機能リストのURL  
 <https://docs.google.com/spreadsheets/d/13f6ZdodjN6tMnvBir0H7WbTt4DkHRNtsIspl3qRV4Ps/edit#gid=1898975908>  
