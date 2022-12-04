@@ -26,7 +26,7 @@ TwitterやInstagram等のSNSとは異なり、同じ趣味をもつライダー�
 <https://docs.google.com/spreadsheets/d/1qdF9TCO9BZ25kAk21Ll0dsD2iuIJydUpzWCgKjQ9-ic/edit?usp=sharing>
   
 ## インフラ構成図
-<%= image_tag asset_path('aws-environment.png') %>
+<s3://motogram-original/Motogram2-ページ2.drawio.png>
 
 ## 実装機能リストのURL  
 <https://docs.google.com/spreadsheets/d/13f6ZdodjN6tMnvBir0H7WbTt4DkHRNtsIspl3qRV4Ps/edit#gid=1898975908>  
@@ -37,4 +37,4 @@ TwitterやInstagram等のSNSとは異なり、同じ趣味をもつライダー�
 * フレームワーク：Ruby on Rails
 * JSライブラリ：jQuery
 * IDE：Cloud9
-* 
+ 
