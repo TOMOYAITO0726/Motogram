@@ -26,7 +26,7 @@ TwitterやInstagram等のSNSとは異なり、同じ趣味をもつライダー�
 <https://docs.google.com/spreadsheets/d/1qdF9TCO9BZ25kAk21Ll0dsD2iuIJydUpzWCgKjQ9-ic/edit?usp=sharing>
   
 ## インフラ構成図
-<https://drive.google.com/file/d/1xHIpCgYiPZbYIOMSwMWr30o81fEoRvVn/view?usp=sharing>
+<https://drive.google.com/file/d/1sjKijmNlsbL26_LLoh9y1XtiwPy5coUV/view?usp=sharing>
 
 ## 実装機能リストのURL  
 <https://docs.google.com/spreadsheets/d/13f6ZdodjN6tMnvBir0H7WbTt4DkHRNtsIspl3qRV4Ps/edit#gid=1898975908>  
