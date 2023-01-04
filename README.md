@@ -20,7 +20,10 @@ TwitterやInstagram等のSNSとは異なり、同じ趣味をもつライダー�
 ### 主な利用シーン  
 * ツーリングの計画を立てる時に他のライダーのツーリングスポットを参考にする  
 * ツーリング後にツーリングの様子を投稿する時  
-* 色々なライダーのツーリングスポットを知りたい時  
+* 色々なライダーのツーリングスポットを知りたい時   
+
+## スライド  
+<https://docs.google.com/presentation/d/1yQkDOCipQbqX7UCVd18-nLYFotYod5OuQlL5GVmRfU8/edit?usp=sharing>
 
 ## 設計書  
 <https://docs.google.com/spreadsheets/d/1qdF9TCO9BZ25kAk21Ll0dsD2iuIJydUpzWCgKjQ9-ic/edit?usp=sharing>
