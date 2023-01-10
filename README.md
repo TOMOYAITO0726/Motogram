@@ -1,6 +1,6 @@
 # Motogram(SNSアプリ)    
 
-## スライド（必見！）  
+## スライド  
 <https://docs.google.com/presentation/d/1yQkDOCipQbqX7UCVd18-nLYFotYod5OuQlL5GVmRfU8/edit?usp=sharing>
 
 ## 設計書  
@@ -13,7 +13,7 @@
 <https://docs.google.com/spreadsheets/d/13f6ZdodjN6tMnvBir0H7WbTt4DkHRNtsIspl3qRV4Ps/edit#gid=1898975908>  
 
 ## 開発環境
-* OS：Linux(CentOS)
+* OS：Amazon Linux release 2 (Karoo)
 * 言語：HTML,CSS,JavaScript,Ruby,SQL
 * フレームワーク：Ruby on Rails
 * JSライブラリ：jQuery
