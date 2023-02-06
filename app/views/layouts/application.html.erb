@@ -56,7 +56,12 @@
                   <i class="fas fa-search fa-2x", data-placement="top", title="検索"></i>
                 <% end %>  
                 <%= link_to  public_notifications_path, class:"btn btn-warning text-white" , method: :get do %>
-                  <i class="fas fa-bell fa-2x",data-toggle="tooltip", data-placement="top", title="お知らせ"></i>
+                  <% if unchecked_notifications.any? %>
+                   <i class="fas fa-bell fa-2x",data-toggle="tooltip", data-placement="top", title="お知らせ"></i>
+                   <i class="fa fa-circle notification-circle"></i>
+                  <% else %>
+                   <i class="fas fa-bell fa-2x",data-toggle="tooltip", data-placement="top", title="お知らせ"></i>
+                  <% end %>
                 <% end %>  
                 <%= link_to  public_user_path(current_user.id), lass:"btn btn-secondary text-white", method: :get do  %>
                   <i class="fas fa-cog fa-2x", data-placement="top", title="ユーザー編集"></i>
